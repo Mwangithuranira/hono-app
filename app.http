@@ -1,0 +1,637 @@
+//USER TABLE **************** 1
+GET http://localhost:8000/api/users
+
+###
+GET http://localhost:8000/api/users/15
+
+###
+
+GET http://localhost:8000/api/users?limit=7
+
+###
+
+//search by name
+GET http://localhost:8000/api/user/name/
+
+###
+
+//search by email
+GET http://localhost:8000/api/user/like?email=mwangi@gmail.com
+
+###
+
+POST http://localhost:8000/api/users
+Content-Type: application/json
+
+
+  {
+    "id": 15,
+    "name": "Glory",
+    "contact_phone": "9560667",
+    "phone_verified": true,
+    "email": "glory@gmail.com",
+    "email_verified": true,
+    "confirmation_code": "2996075",
+    "password": "4907605",
+    "created_at":"{{$datetime rfc1123}}",
+    "updated_at": "{{$datetime rfc1123}}"
+  }
+###
+
+PUT http://localhost:8000/api/users/2
+Content-Type: application/json
+
+{
+    "name": "Kevin"
+}
+###
+DELETE http://localhost:8000/api/users/15
+
+###
+
+
+
+###
+
+//RESTAURANT TABLE **************** 2
+GET http://localhost:8000/api/restaurants
+
+###
+GET http://localhost:8000/api/restaurants/7
+
+###
+GET http://localhost:8000/api/restaurants?limit=7
+
+###
+GET http://localhost:8000/api/restaurants?limit=7&offset=2
+
+###
+POST http://localhost:8000/api/restaurants
+Content-Type: application/json
+
+  {
+    "id": 8,
+    "name": "KFC",
+    "street_address": "240",
+    "zip_code": "241",
+    "city_id": 1,
+    "created_at": "2024-06-08",
+    "updated_at": "2024-06-08"
+  }
+
+###
+PUT http://localhost:8000/api/restaurants/8
+Content-Type: application/json
+
+{
+    "name": "KFL"
+}
+ 
+###
+DELETE http://localhost:8000/api/restaurants/12
+
+
+
+###
+//ADDRESS TABLE **************** 3
+GET http://localhost:8000/api/addresses
+
+###
+GET http://localhost:8000/api/addresses/5
+
+###
+GET http://localhost:8000/api/addresses?limit=7
+
+###
+GET http://localhost:8000/api/addresses?limit=7&offset=2
+
+###
+POST http://localhost:8000/api/addresses
+Content-Type: application/json
+
+  {
+    "id": 8,
+    "street_address": "240",
+    "zip_code": "241",
+    "city_id": 1,
+    "created_at": "2024-06-08",
+    "updated_at": "2024-06-08"
+  }
+  
+
+###
+PUT http://localhost:8000/api/addresses/8
+Content-Type: application/json
+  
+  {
+      "city_id": "4"
+  }
+
+###
+DELETE http://localhost:8000/api/addresses/12
+
+
+###
+//CATEGORY TABLE **************** 4
+GET http://localhost:8000/api/categories
+
+###
+GET http://localhost:8000/api/categories/5
+
+###
+GET http://localhost:8000/api/categories?limit=7
+
+###
+GET http://localhost:8000/api/categories?limit=7&offset=2
+
+###
+POST http://localhost:8000/api/categories
+Content-Type: application/json
+
+  {
+    "id": 8,
+    "name": "Fast Food",
+    "created_at": "2024-06-08",
+    "updated_at": "2024-06-08"
+  }
+
+
+###
+PUT http://localhost:8000/api/categories/8
+Content-Type: application/json
+
+{
+    "name": "Fast Food"
+}
+
+
+###
+DELETE http://localhost:8000/api/categories/12
+
+
+
+###
+//CITY TABLE **************** 5
+GET http://localhost:8000/api/cities
+
+###
+GET http://localhost:8000/api/cities/5
+
+###
+GET http://localhost:8000/api/cities?limit=7
+
+###
+GET http://localhost:8000/api/cities?limit=7&offset=2
+
+###
+POST http://localhost:8000/api/cities
+Content-Type: application/json
+
+  {
+    "id": 8,
+    "name": "Nairobi",
+    "created_at": "2024-06-08",
+    "updated_at": "2024-06-08"
+  }
+
+
+###
+PUT http://localhost:8000/api/cities/8
+Content-Type: application/json
+
+{
+    "name": "Nairobi"
+}
+
+
+###
+DELETE http://localhost:8000/api/cities/40
+
+
+
+
+
+###
+//COMMENT TABLE **************** 6
+GET http://localhost:8000/api/comments
+
+###
+GET http://localhost:8000/api/comments/5
+
+###
+GET http://localhost:8000/api/comments?limit=7
+
+###
+GET http://localhost:8000/api/comments?limit=7&offset=2
+
+###
+POST http://localhost:8000/api/comments
+Content-Type: application/json
+
+  {
+    "id": 8,
+    "comment": "The food was great",
+    "rating": 4,
+    "user_id": 1,
+    "restaurant_id": 1,
+    "created_at": "2024-06-08",
+    "updated_at": "2024-06-08"
+  }
+
+
+###
+PUT http://localhost:8000/api/comments/8
+Content-Type: application/json
+
+  {
+    "id": 8,
+    "comment": "The food was great",
+    "rating": 4,
+    "user_id": 1,
+    "restaurant_id": 1,
+    "created_at": "2024-06-08",
+    "updated_at": "2024-06-08"
+  }
+
+
+###
+DELETE http://localhost:8000/api/comments/12
+
+
+
+###
+//DRIVER TABLE **************** 7
+GET http://localhost:8000/api/drivers
+
+
+###
+GET http://localhost:8000/api/drivers/5
+
+
+###
+GET http://localhost:8000/api/drivers?limit=7
+
+
+###
+GET http://localhost:8000/api/drivers?limit=7&offset=2
+
+
+###
+POST http://localhost:8000/api/drivers
+Content-Type: application/json
+
+    {
+    "id": 16,
+    "car_make": "tayota",
+    "car_model": "toyata",
+    "car_year": 2016,
+    "user_id": 5,
+    "online": true,
+    "delivering": true,
+    "created_at": "2024-06-08",
+    "updated_at": "2024-06-08"
+  }
+
+
+###
+PUT http://localhost:8000/api/drivers/16
+Content-Type: application/json
+
+{
+    "car_make": "tayota",
+    "car_model": "toyata",
+    "car_year": 2016,
+    "user_id": 5,
+    "online": true,
+    "delivering": true,
+    "created_at": "2024-06-08",
+    "updated_at": "2024-06-08"
+}
+
+
+###
+DELETE http://localhost:8000/api/drivers/17
+
+
+
+###
+//STATE   TABLE **************** 8
+GET http://localhost:8000/api/states
+
+###
+GET http://localhost:8000/api/states/5
+
+###
+GET http://localhost:8000/api/states?limit=7
+
+###
+GET http://localhost:8000/api/states?limit=7&offset=2
+
+###
+POST http://localhost:8000/api/states
+Content-Type: application/json
+
+  {
+    "id": 8,
+    "name": "Nairobi",
+    "created_at": "2024-06-08",
+    "updated_at": "2024-06-08"
+  }
+
+
+###
+PUT http://localhost:8000/api/states/8
+Content-Type: application/json
+
+{
+    "name": "Nairobi"
+}
+
+
+###
+DELETE http://localhost:8000/api/states/40
+
+
+
+###
+//MENU_ITEM TABLE **************** 9
+GET http://localhost:8000/api/menu-items
+
+
+###
+GET http://localhost:8000/api/menu-items/5
+
+
+###
+GET http://localhost:8000/api/menu-items?limit=7
+
+
+###
+GET http://localhost:8000/api/menu-items?limit=7&offset=2
+
+
+###
+POST http://localhost:8000/api/menu-items
+Content-Type: application/json
+
+  {
+    "id": 8,
+    "name": "Chips",
+    "price": 200,
+    "restaurant_id": 1,
+    "created_at": "2024-06-08",
+    "updated_at": "2024-06-08"
+  }
+
+
+###
+PUT http://localhost:8000/api/menu-items/8
+Content-Type: application/json
+
+{
+    "name": "Chips",
+    "price": 200,
+    "restaurant_id": 1,
+    "created_at": "2024-06-08",
+    "updated_at": "2024-06-08"
+}
+
+
+###
+DELETE http://localhost:8000/api/menu-items/90
+
+
+
+###
+//ORDER TABLE ****************  10
+GET http://localhost:8000/api/orders
+
+
+###
+GET http://localhost:8000/api/orders/19
+
+
+###
+GET http://localhost:8000/api/orders?limit=7
+
+
+###
+GET http://localhost:8000/api/orders?limit=7&offset=2
+
+
+###
+POST http://localhost:8000/api/orders
+Content-Type: application/json
+
+  {
+    "id": 8,
+    "user_id": 1,
+    "restaurant_id": 1,
+    "driver_id": 1,
+    "total": 200,
+    "created_at": "2024-06-08",
+    "updated_at": "2024-06-08"
+  }
+
+
+###
+PUT http://localhost:8000/api/orders/8
+Content-Type: application/json
+
+{
+    "user_id": 1,
+    "restaurant_id": 1,
+    "driver_id": 1,
+    "total": 200,
+    "created_at": "2024-06-08",
+    "updated_at": "2024-06-08"
+}
+
+
+###
+DELETE http://localhost:8000/api/orders/12
+
+
+
+###
+//ORDER_MENU_ITEM  TABLE **************** 11
+GET http://localhost:8000/api/order-menu-items
+
+
+###
+GET http://localhost:8000/api/order-menu-items/5
+
+
+###
+GET http://localhost:8000/api/order-menu-items?limit=7
+
+
+###
+GET http://localhost:8000/api/order-menu-items?limit=7&offset=2
+
+
+###
+POST http://localhost:8000/api/order-menu-items
+Content-Type: application/json
+
+  {
+    "id": 8,
+    "order_id": 1,
+    "menu_item_id": 1,
+    "quantity": 2,
+    "created_at": "2024-06-08",
+    "updated_at": "2024-06-08"
+  }
+
+
+###
+PUT http://localhost:8000/api/order-menu-items/8
+Content-Type: application/json
+
+{
+    "order_id": 1,
+    "menu_item_id": 1,
+    "quantity": 2,
+    "created_at": "2024-06-08",
+    "updated_at": "2024-06-08"
+}
+
+
+###
+DELETE http://localhost:8000/api/order-menu-items/89
+
+
+
+###
+//ORDER_STATUS  TABLE ****************  12
+GET http://localhost:8000/api/order-statuses
+
+
+###
+GET http://localhost:8000/api/order-statuses/5
+
+
+###
+GET http://localhost:8000/api/order-statuses?limit=7
+
+
+###
+GET http://localhost:8000/api/order-statuses?limit=7&offset=2
+
+
+###
+POST http://localhost:8000/api/order-statuses
+Content-Type: application/json
+
+  {
+    "id": 8,
+    "order_id": 1,
+    "status": "delivered",
+    "created_at": "2024-06-08",
+    "updated_at": "2024-06-08"
+  }
+
+
+###
+PUT http://localhost:8000/api/order-statuses/8
+Content-Type: application/json
+
+{
+    "order_id": 1,
+    "status": "delivered",
+    "created_at": "2024-06-08",
+    "updated_at": "2024-06-08"
+}
+
+
+###
+DELETE http://localhost:8000/api/order-statuses/12
+
+
+
+
+###
+//RESTAURANT_OWNER  TABLE ****************  13
+GET http://localhost:8000/api/restaurant-owners
+
+###
+GET http://localhost:8000/api/restaurant-owners/5
+
+###
+GET http://localhost:8000/api/restaurant-owners?limit=7
+
+###
+GET http://localhost:8000/api/restaurant-owners?limit=7&offset=2
+
+###
+POST http://localhost:8000/api/restaurant-owners
+Content-Type: application/json
+
+  {
+    "id": 8,
+    "user_id": 1,
+    "restaurant_id": 1,
+    "created_at": "2024-06-08",
+    "updated_at": "2024-06-08"
+  }
+
+
+###
+PUT http://localhost:8000/api/restaurant-owners/8
+Content-Type: application/json
+
+{
+    "user_id": 1,
+    "restaurant_id": 1,
+    "created_at": "2024-06-08",
+    "updated_at": "2024-06-08"
+}
+
+
+###
+DELETE http://localhost:8000/api/restaurant-owners/60
+
+
+
+###
+//STATUS_CATALOG  TABLE **************** 14
+GET http://localhost:8000/api/status-catalogs
+
+###
+GET http://localhost:8000/api/status-catalogs/5
+
+###
+GET http://localhost:8000/api/status-catalogs?limit=7
+
+###
+GET http://localhost:8000/api/status-catalogs?limit=7&offset=2
+
+###
+POST http://localhost:8000/api/status-catalogs
+Content-Type: application/json
+
+  {
+    "id": 8,
+    "status": "delivered",
+    "created_at": "2024-06-08",
+    "updated_at": "2024-06-08"
+  }
+
+
+###
+PUT http://localhost:8000/api/status-catalogs/8
+Content-Type: application/json
+
+  {
+    "id": 8,
+    "status": "delivered",
+    "created_at": "2024-06-08",
+    "updated_at": "2024-06-08"
+  }
+
+
+###
+DELETE http://localhost:8000/api/status-catalogs/40
+
+
+
